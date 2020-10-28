@@ -21,19 +21,19 @@ client.once('ready', () => {
 	let webdev_emoji = system.createOption("webdev:769472273941528587", "756417753044221972");
 	let design_emoji = system.createOption("design:770022122939613184", "756418048432275486");
 	let programming_emoji = system.createOption("progamming:769959123156467722", "756222780697215168");
-	let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
-	let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
-	let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
-	let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
 	let gaming_emoji = system.createOption("gaming:768177306794852418", "756417937048338454");
+	let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
+	let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
+	let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
+	let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
+
+	system.createMessage("770984448555745311","757481161852321884",7,null,webdev_emoji,design_emoji,programming_emoji,gaming_emoji,gd_emoji,quiz_emoji,photography_emoji,av_emoji);
+
+
+	system.init();	
 
 
 
-
-
-	system.createMessage("770984448555745311", "757481161852321884", 8, null, webdev_emoji, design_emoji, programming_emoji,av_emoji,photography_emoji,quiz_emoji,gd_emoji,gaming_emoji);
-
-	system.init();
 
 	//server stats
 
