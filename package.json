@@ -1,0 +1,19 @@
+{
+  "name": "mach",
+  "version": "1.0.0",
+  "description": "MACH Discord Bot",
+  "main": "mach.js",
+  "scripts": {
+    "dev": "nodemon mach.js",
+    "start": "node mach.js"
+  },
+  "author": "Sagar",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "reaction-role": "^2.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
