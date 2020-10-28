@@ -27,7 +27,7 @@ client.once('ready', () => {
 	let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
 	let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
 
-	system.createMessage("770984448555745311","757481161852321884",7,null,webdev_emoji,design_emoji,programming_emoji,gaming_emoji,gd_emoji,quiz_emoji,photography_emoji,av_emoji);
+	system.createMessage("771082393800933379","757481161852321884",7,null,webdev_emoji,design_emoji,programming_emoji,gaming_emoji,gd_emoji,quiz_emoji,photography_emoji,av_emoji);
 
 
 	system.init();	
