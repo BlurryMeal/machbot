@@ -12,6 +12,8 @@ module.exports = {
 			.addFields(
 				{ name: '.mach', value: 'What is mach?' },
 				{ name: '.events', value: 'Provides a list of all the events which will take place in MACH' },
+				{ name: '.workshop', value: 'Provides workshop details and timings' },
+				{ name: '.register', value: 'Provides you a link through which you can register for MACH' },
 				{ name: '.programming', value: 'Provides programming details' },
 				{ name: '.webdev', value: 'Provides web development details' },
 				{ name: '.design', value: 'Provides design details' },

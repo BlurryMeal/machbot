@@ -10,8 +10,7 @@
   "author": "Sagar",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1",
-    "reaction-role": "^2.1.6"
+    "discord.js": "^12.4.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

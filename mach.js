@@ -2,8 +2,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '.';
 const fs = require('fs');
-const ReactionRole = require("reaction-role");
-const system = new ReactionRole(process.env.TOKEN);
+const welcome = require('./welcome')
+
+//const ReactionRole = require("reaction-role");
+//const system = new ReactionRole(process.env.TOKEN);
 
 client.commands = new Discord.Collection();
 
@@ -14,26 +16,24 @@ for (const file of commandFiles) {
 }
 
 //reaction roles
+//let webdev_emoji = system.createOption("webdev:769472273941528587", "756417753044221972");
+//let design_emoji = system.createOption("design:770022122939613184", "756418048432275486");
+//let programming_emoji = system.createOption("progamming:769959123156467722", "756222780697215168");
+//let gaming_emoji = system.createOption("gaming:768177306794852418", "756417937048338454");
+//let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
+//let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
+//let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
+//let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
+
+//system.createMessage("771082393800933379", "757481161852321884", 8, null, webdev_emoji, design_emoji, programming_emoji, gaming_emoji, gd_emoji, quiz_emoji,photography_emoji,av_emoji);
+
+
+//system.init();
 
 client.once('ready', () => {
 	console.log('MACH Bot is online!');
 	client.user.setActivity("MACH | .help");
-	let webdev_emoji = system.createOption("webdev:769472273941528587", "756417753044221972");
-	let design_emoji = system.createOption("design:770022122939613184", "756418048432275486");
-	let programming_emoji = system.createOption("progamming:769959123156467722", "756222780697215168");
-	let gaming_emoji = system.createOption("gaming:768177306794852418", "756417937048338454");
-	let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
-	let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
-	let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
-	let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
-
-	system.createMessage("771082393800933379","757481161852321884",7,null,webdev_emoji,design_emoji,programming_emoji,gaming_emoji,gd_emoji,quiz_emoji,photography_emoji,av_emoji);
-
-
-	system.init();	
-
-
-
+	welcome(client)
 
 	//server stats
 
@@ -43,14 +43,14 @@ client.once('ready', () => {
 	 setInterval(function () {
 	 	console.log('Getting stats update..')
 	 	var userCount = guild.memberCount;
-	 	var particpantCount = guild.roles.cache.get('753554226235310221').members.size;
+	 	var participantCount = guild.roles.cache.get('753554226235310221').members.size;
 	 	console.log("Total Members: " + userCount);
-	 	console.log("Participants: " + particpantCount);
+	 	console.log("Participants: " + participantCount);
 	 	totalUsers.setName("Total Members: " + userCount)
 	 		.then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
 	 		.catch(console.error);
 
-	 	Participants.setName("Participants: " + particpantCount)
+	 	Participants.setName("Participants: " + participantCount)
 	 		.then(newChannel => console.log(`Stat channel renamed to: ${newChannel.name}`))
 	 		.catch(console.error);
 	 }, 30000)
@@ -89,6 +89,10 @@ client.on('message', message => {
 		client.commands.get('events').execute(message, args);
 	} if (command === 'embed') {
 		client.commands.get('embed').execute(message, args);
+	} if (command === 'register') {
+		client.commands.get('register').execute(message, args);
+	} if (command === 'workshop') {
+		client.commands.get('workshop').execute(message, args);
 	}
 });
 
@@ -132,10 +136,6 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 
 //welcome message
 
-client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.cache.find(ch => ch.name === 'welcome');
-    if (!channel) return;
-    channel.send(`Nice to see you ${member}, Welcome to **MACH**! If you have any issues then go ahead and ask your questions in \#queries. If you want any info related to the events then do .help`);
-  });
+
 
 client.login(process.env.TOKEN);
