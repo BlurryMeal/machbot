@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '.';
 const fs = require('fs');
-const welcome = require('./welcome')
+const Welcome = require("discord-welcome");
 
-//const ReactionRole = require("reaction-role");
-//const system = new ReactionRole(process.env.TOKEN);
+const ReactionRole = require("reaction-role");
+const system = new ReactionRole(process.env.TOKEN);
 
 client.commands = new Discord.Collection();
 
@@ -16,24 +16,28 @@ for (const file of commandFiles) {
 }
 
 //reaction roles
-//let webdev_emoji = system.createOption("webdev:769472273941528587", "756417753044221972");
-//let design_emoji = system.createOption("design:770022122939613184", "756418048432275486");
-//let programming_emoji = system.createOption("progamming:769959123156467722", "756222780697215168");
-//let gaming_emoji = system.createOption("gaming:768177306794852418", "756417937048338454");
-//let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
-//let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
-//let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
-//let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
+let webdev_emoji = system.createOption("webdev:769472273941528587", "756417753044221972");
+let design_emoji = system.createOption("design:770022122939613184", "756418048432275486");
+let programming_emoji = system.createOption("progamming:769959123156467722", "756222780697215168");
+let gaming_emoji = system.createOption("gaming:768177306794852418", "756417937048338454");
+let gd_emoji = system.createOption("gd:769962692597121114", "756417923634954280");
+let quiz_emoji = system.createOption("quiz:769942692293509160", "757466483247939616");
+let photography_emoji = system.createOption("photography:768794075838414850", "756417791724224552");
+let av_emoji = system.createOption("av:769944589335134239", "757476797221830657");
 
-//system.createMessage("771082393800933379", "757481161852321884", 8, null, webdev_emoji, design_emoji, programming_emoji, gaming_emoji, gd_emoji, quiz_emoji,photography_emoji,av_emoji);
+system.createMessage("771082393800933379", "757481161852321884", 8, null, webdev_emoji, design_emoji, programming_emoji, gaming_emoji, gd_emoji, quiz_emoji,photography_emoji,av_emoji);
 
 
-//system.init();
+system.init();
 
 client.once('ready', () => {
 	console.log('MACH Bot is online!');
 	client.user.setActivity("MACH | .help");
-	welcome(client)
+	Welcome(client, {
+		privatemsg : "Welcome to the MACH discord server. We will be announcing various information in #announcements so stay alert :) \n Good luck for the events!",
+		publicmsg : "Welcome to the MACH Discord server @MEMBER, go ahead and check out #roles to receive the event roles that you want to participate in and if you ever have any issues then you can send it on #queries and we will help you out. \n Have a great Day!",
+		publicchannel : "768870717247848538"
+		})
 
 	//server stats
 
@@ -55,6 +59,11 @@ client.once('ready', () => {
 	 		.catch(console.error);
 	 }, 30000)
 });
+client.on('guildMemberAdd', member => {
+	console.log('User ' + member.user.username + ' has joined the server!')
+	var role = member.guild.roles.cache.find(role => role.name === 'Participant');
+	member.roles.add(role)
+  });
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
