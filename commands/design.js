@@ -6,7 +6,7 @@ module.exports = {
 		const exampleEmbed = new Discord.MessageEmbed().setTitle('Design');
 
 		exampleEmbed.setColor('#6699EE');
-		exampleEmbed.setDescription('Design is the process of envisioning and planning an object and bringing it to life with the help of various tools and elements. Participants will be given a prompt on 1st November and would be told to make a design related to that prompt. Use your imagination and knowledge and *make* a design worthy to impress the judges.')
+		exampleEmbed.setDescription('Design is the process of envisioning and planning an object and bringing it to life with the help of various tools and elements. Participants will be given a prompt on 17th November and would be told to make a design related to that prompt. Use your imagination and knowledge and *make* a design worthy to impress the judges.')
 		exampleEmbed.setTimestamp()
 
 		message.author.send(exampleEmbed);

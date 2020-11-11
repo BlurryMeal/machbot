@@ -96,8 +96,6 @@ client.on('message', message => {
 		client.commands.get('help').execute(message, args);
 	} if (command === 'events') {
 		client.commands.get('events').execute(message, args);
-	} if (command === 'embed') {
-		client.commands.get('embed').execute(message, args);
 	} if (command === 'register') {
 		client.commands.get('register').execute(message, args);
 	} if (command === 'workshop') {
