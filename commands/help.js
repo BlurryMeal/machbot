@@ -6,7 +6,7 @@ module.exports = {
 		const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#6699EE')
 			.setTitle('Commands List')
-			.setURL('https://minet.co/')
+			.setURL('https://minet.co/mach')
 			.setDescription('Here is the list of all the commands that will help you out on the server')
 			.setThumbnail('https://i.imgur.com/DRdHRSC.png/')
 			.addFields(
