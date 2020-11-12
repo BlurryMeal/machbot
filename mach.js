@@ -35,7 +35,7 @@ client.once('ready', () => {
 	client.user.setActivity("MACH");
 	Welcome(client, {
 		privatemsg : "Welcome to the MACH discord server. We will be announcing various information in #announcements so stay alert :) \n Have a good day!",
-		publicmsg : "Welcome to the MACH Discord server @MEMBER \n Hope you have a good",
+		publicmsg : "Welcome to the MACH Discord server @MEMBER \n Hope you have a good time!",
 		publicchannel : "768870717247848538"
 		})
 
