@@ -32,7 +32,7 @@ system.init();
 
 client.once('ready', () => {
 	console.log('MACH Bot is online!');
-	client.user.setActivity("MACH | .help");
+	client.user.setActivity("MACH");
 	Welcome(client, {
 		privatemsg : "Welcome to the MACH discord server. We will be announcing various information in #announcements so stay alert :) \n Good luck for the events!",
 		publicmsg : "Welcome to the MACH Discord server @MEMBER, go ahead and check out #roles to receive the event roles that you want to participate in and if you ever have any issues then you can send it on #queries and we will help you out. \n Have a great Day!",
