@@ -65,43 +65,43 @@ client.on('guildMemberAdd', member => {
 	member.roles.add(role)
   });
 
-//client.on('message', message => {
-//	if (!message.content.startsWith(prefix) || message.author.bot) return;
-//	if (message.content == "f") {
-//		message.channel.send("lmao rip he gon");
-//	}
-//
-//	const args = message.content.slice(prefix.length).split(/ +/);
-//	const command = args.shift().toLowerCase();
-//
-//	if (command === 'mach') {
-//		client.commands.get('mach').execute(message, args);
-//	} if (command === 'av') {
-//		client.commands.get('av').execute(message, args);
-//	} if (command === 'photography') {
-//		client.commands.get('photography').execute(message, args);
-//	} if (command === 'design') {
-//		client.commands.get('design').execute(message, args);
-//	} if (command === 'gaming') {
-//		client.commands.get('gaming').execute(message, args);
-//	} if (command === 'gd') {
-//		client.commands.get('gd').execute(message, args);
-//	} if (command === 'programming') {
-//		client.commands.get('programming').execute(message, args);
-//	} if (command === 'quiz') {
-//		client.commands.get('quiz').execute(message, args);
-//	} if (command === 'webdev') {
-//		client.commands.get('webdev').execute(message, args);
-//	} if (command === 'help') {
-//		client.commands.get('help').execute(message, args);
-//	} if (command === 'events') {
-//		client.commands.get('events').execute(message, args);
-//	} if (command === 'register') {
-//		client.commands.get('register').execute(message, args);
-//	} if (command === 'workshop') {
-//		client.commands.get('workshop').execute(message, args);
-//	}
-// });
+client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (message.content == "f") {
+		message.channel.send("lmao rip he gon");
+	}
+
+	const args = message.content.slice(prefix.length).split(/ +/);
+	const command = args.shift().toLowerCase();
+
+	if (command === 'mach') {
+		client.commands.get('mach').execute(message, args);
+	} if (command === 'av') {
+		client.commands.get('av').execute(message, args);
+	} if (command === 'photography') {
+		client.commands.get('photography').execute(message, args);
+	} if (command === 'design') {
+		client.commands.get('design').execute(message, args);
+	} if (command === 'gaming') {
+		client.commands.get('gaming').execute(message, args);
+	} if (command === 'gd') {
+		client.commands.get('gd').execute(message, args);
+	} if (command === 'programming') {
+		client.commands.get('programming').execute(message, args);
+	} if (command === 'quiz') {
+		client.commands.get('quiz').execute(message, args);
+	} if (command === 'webdev') {
+		client.commands.get('webdev').execute(message, args);
+	} if (command === 'help') {
+		client.commands.get('help').execute(message, args);
+	} if (command === 'events') {
+		client.commands.get('events').execute(message, args);
+	} if (command === 'register') {
+		client.commands.get('register').execute(message, args);
+	} if (command === 'workshop') {
+		client.commands.get('workshop').execute(message, args);
+	}
+ });
 
 //message delete logs
 
