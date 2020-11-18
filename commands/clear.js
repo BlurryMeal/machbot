@@ -1,7 +1,7 @@
 module.exports = {
-    name = 'clear',
-    description =   'clear messages!',
-    execute(message, args) {
+    name: 'clear',
+    description: 'clear messages!',
+    async execute(message, args) {
         if(message.member.roles.cache.has('753553858537717801')){
             if(!args[0]) return message.reply("bro how are you so dumb! add a number :|");
             if(isNaN(args[0])) return message.reply("damn, we dont have a shortage of dumb people... add a real number!");
