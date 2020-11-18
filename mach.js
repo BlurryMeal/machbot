@@ -100,6 +100,8 @@ client.on('message', message => {
 		client.commands.get('register').execute(message, args);
 	} if (command === 'workshop') {
 		client.commands.get('workshop').execute(message, args);
+	} if (command === 'clear') {
+		client.commands.get('clear').execute(message, args);
 	}
  });
 
