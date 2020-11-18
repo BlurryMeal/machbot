@@ -14,7 +14,7 @@ module.exports = {
         })
             
         } else {
-            message.channel.reply('HAHA You dont have perms for this command. :)')
+            message.channel.send('HAHA You dont have perms for this command. :)')
         }
         
 
