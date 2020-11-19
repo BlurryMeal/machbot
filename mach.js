@@ -142,9 +142,99 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
 
 	client.channels.cache.get(`753572296572010526`).send(editEmbed)
 });
+const initial = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Register for Mach Programming')
+			.setDescription('Answer the Following questions in order to register for the programming event.')
+			.setThumbnail('https://i.imgur.com/DRdHRSC.png/')
+			.addField("Please Fill out the form with the right details as this is being stored in a database.", "\u200b")
+			.setTimestamp()
+			.setFooter('MACH');
 
-//welcome message
+const q1 = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Question 1')
+			.setDescription('What is your Name?')
+			.setTimestamp()
+			.setFooter('MACH');
+
+const q2 = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Question 2')
+			.setDescription('What is your Class?')
+			.setTimestamp()
+			.setFooter('MACH');
+
+const q3 = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Question 3')
+			.setDescription('Which programming languages do you know?')
+			.setTimestamp()
+			.setFooter('MACH');
+
+const q4 = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Question 4')
+			.setDescription('What is your HackerRank Username?')
+			.setTimestamp()
+			.setFooter('MACH');
+
+const ty = new Discord.MessageEmbed()
+			.setColor('#6699EE')
+			.setTitle('Register')
+			.setDescription('Thank you for registering for the programming event, if you are facing an issues then contact BlurryMeal#9359.')
+			.setTimestamp()
+			.setFooter('MACH');
 
 
+		
+let userApplications = {}
+client.on("message", function(message) {
+	if (message.author.equals(client.user)) return;
+  
+	let authorId = message.author.id;
+  
+	if (message.content === ".prog_apply") {
+		console.log(`Apply begin for authorId ${authorId}`);
+		// User is not already in a registration process    
+		if (!(authorId in userApplications)) {
+			userApplications[authorId] = { "step" : 1}
+  
+			message.author.send(initial);
+			message.author.send(q1);
+		}
+  
+	} else {
+  
+		if (message.channel.type === "dm" && authorId in userApplications) {
+			let authorApplication = userApplications[authorId];
+  
+			if (authorApplication.step == 1 ) {
+				authorApplication.answer1 = message.content;
+				message.author.send(q2);
+				authorApplication.step ++;
+			}
+			else if (authorApplication.step == 2) {
+				authorApplication.answer2 = message.content;
+				message.author.send(q3);
+				authorApplication.step ++;
+			}
+			else if (authorApplication.step == 3) {
+				authorApplication.answer3 = message.content;
+				message.author.send(q4);
+				authorApplication.step ++;
+			}
+  
+			else if (authorApplication.step == 4) {
+				authorApplication.answer4 = message.content;
+				message.author.send(ty);
+				//before deleting, you can send the answers to a specific channel by ID
+				client.channels.cache.get("778991626814357524")
+				  .send(`${message.author.tag}\n${authorApplication.answer1}\n${authorApplication.answer2}\n${authorApplication.answer3}\n${authorApplication.answer4}`);
+				delete userApplications[authorId];
+			}
+		}
+	}
+  });
 
 client.login(process.env.TOKEN);
