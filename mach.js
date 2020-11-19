@@ -230,7 +230,7 @@ client.on("message", function(message) {
 				message.author.send(ty);
 				//before deleting, you can send the answers to a specific channel by ID
 				client.channels.cache.get("778991626814357524")
-				  .send(`${message.author.tag}\n${authorApplication.answer1}\n${authorApplication.answer2}\n${authorApplication.answer3}\n${authorApplication.answer4}`);
+				  .send(`${message.author.tag}\n${authorApplication.answer1}\n${authorApplication.answer2}\n${authorApplication.answer3}\n${authorApplication.answer4}\n ------------------------------------`);
 				delete userApplications[authorId];
 			}
 		}
