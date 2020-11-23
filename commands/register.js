@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
-	name: 'register',
-	description: "this is a register command!",
+	name: 'cautiousness',
+	description: "this is a cautiousness command!",
 	execute(message, args) {
 		const exampleEmbed = new Discord.MessageEmbed().setTitle('Registrations');
 		exampleEmbed.setColor('#6699EE');
