@@ -7,17 +7,17 @@ module.exports = {
 			.setColor('#6699EE')
 			.setTitle('Events List')
 			.setURL('https://minet.co/mach/events')
-			.setDescription('Dates and timings for all the events will be announced later.')
-			//.addFields(
-				//{ name: 'Programming', value: '24th November (4:45 pm - 6:45 pm)', inline: true },
-				//{ name: 'Design', value: 'Submission: 27th November (9:41 pm)', inline: true },
-				//{ name: 'Web Development', value: 'Submission: 27th November  9:41 pm)', inline: true },
-				//{ name: 'Gaming', value: '25th November ( 3 Rounds ) ( 2:30 pm - 8 pm ) \n 26th November ( Valorant 5v5 ) ( 3pm onwards )', inline: true },
-				//{ name: 'Group Discussion', value: '24th November (7:00 pm - 9:00 pm) and 27th November (6:30 pm - 8:30 pm)', inline: true },
-				//{ name: 'Quiz', value: '26th November (Timings will be provided later) and 27th November (3:00 pm - 5:00 pm)', inline: true },
-				//{ name: 'Photography', value: 'Submission:27th November (9:41 pm)', inline: true },
-				//{ name: 'AV Editing', value: 'Submission: 27th November (9:41 pm) ', inline: true },
-			//)
+			.setDescription('Here are the Dates for all of the events.Timings for all the events will be provided later.')
+			.addFields(
+				{ name: 'Programming', value: '28th November ', inline: true },
+				{ name: 'Design', value: 'Submission: 1st December (9:41 pm)', inline: true },
+				{ name: 'Web Development', value: 'Submission: 1st December (9:41 pm) ', inline: true },
+				{ name: 'Gaming', value: '28th November (Valorant Deathmatch) \n 30th November (3 Rounds)', inline: true },
+				{ name: 'Group Discussion', value: '29th November', inline: true },
+				{ name: 'Quiz', value: '28th November and 30th November', inline: true },
+				{ name: 'Photography', value: 'Submission:1st December (9:41 pm)', inline: true },
+				{ name: 'AV Editing', value: 'Submission: 1st December (9:41 pm) ', inline: true },
+			)
 			.setTimestamp()
 		message.channel.send(exampleEmbed);
 
