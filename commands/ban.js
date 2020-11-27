@@ -1,18 +1,18 @@
 module.exports = {
-    name: 'kick',
-    description: 'kick dumb people!',
-    execute(message, args) {
-        const member = message.mentions.users.first();
-        if(member){
+    name: 'ban',
+    description: "This command ban a member!",
+    execute(message, args){
+        const target = message.mentions.users.first();
+        if(target){
             if(message.member.roles.cache.has('753553858537717801')){
-            const memberTarger = message.guild.members.cache.get(member.id);
-            memberTarger.ban();
+            const memberTarget = message.guild.members.cache.get(target.id);
+            memberTarget.ban();
             message.channel.send("User has been banned");
             }else{
-                message.channel.send("You cannot ban members :(")
+                message.channel.send("You cannot ban Members :(")
             }
         }else{
-            message.channel.send("You couldn't ban that member :(")
+            message.channel.send(`You coudn't ban that member!`);
         }
     }
 }
