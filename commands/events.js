@@ -9,7 +9,7 @@ module.exports = {
 			.setURL('https://minet.co/mach/events')
 			.setDescription('Here are the Dates for all of the events.Timings for all the events will be provided later.')
 			.addFields(
-				{ name: 'Programming', value: '28th November (9:00am - 11:30am) ', inline: true },
+				{ name: 'Programming', value: '30th November (10:30am - 1:00pm) ', inline: true },
 				{ name: 'Design', value: 'Submission: 1st December (9:41 pm)', inline: true },
 				{ name: 'Web Development', value: 'Submission: 1st December (9:41 pm) ', inline: true },
 				{ name: 'Gaming', value: '28th, 29th and 30th November ( do **.gaming** for timings )', inline: true },
