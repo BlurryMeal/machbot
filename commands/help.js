@@ -10,6 +10,8 @@ module.exports = {
 			.setDescription('Here is the list of all the commands that will help you out on the server')
 			.setThumbnail('https://i.imgur.com/DRdHRSC.png/')
 			.addFields(
+				{ name: '.play (song name or URL )', value: 'Plays that video in the voice channel you are in' },
+				{ name: '.leave', value: 'Leaves the VC it is in' },
 				{ name: '.mach', value: 'What is mach?' },
 				{ name: '.events', value: 'Provides a list of all the events which will take place in MACH' },
 				{ name: '.workshop', value: 'Provides workshop details and timings' },

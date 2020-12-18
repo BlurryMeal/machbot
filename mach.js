@@ -110,6 +110,10 @@ client.on('message', message => {
 		client.commands.get('mute').execute(message, args);
 	} if (command === 'unmute'){
 		client.commands.get('unmute').execute(message, args);
+	} if (command === 'play'){
+		client.commands.get('play').execute(message, args);
+	} if (command === 'leave'){
+		client.commands.get('leave').execute(message, args);
 	}
  });
 
